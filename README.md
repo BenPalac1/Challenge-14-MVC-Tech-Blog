@@ -93,7 +93,7 @@ THEN I am able to view posts and comments but I am prompted to log in again befo
 
 ## Resources Used
     - npmjs.com
-    - Module 14 docs
+    - Module 14 docs, especially mini project
     - Project 2 for reference
 
 
