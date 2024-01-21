@@ -4,6 +4,10 @@ Module 14
 <br>
 <br>
 
+## Resources Used
+    - npmjs.com
+    
+
 ## License
 
 MIT License
