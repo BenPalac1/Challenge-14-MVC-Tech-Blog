@@ -20,7 +20,6 @@ const commentFormHandler = async (event) => {
         document.location.reload();
       } catch (error) {
         console.error('Error:', error.message);
-        // Handle error appropriately (e.g., show a message to the user)
       }
     }
   };
