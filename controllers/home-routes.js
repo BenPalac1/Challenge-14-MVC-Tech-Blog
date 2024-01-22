@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
+    // get one post by it's id
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
@@ -47,7 +48,7 @@ router.get('/post/:id', async (req, res) => {
   }
 });
 
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/login-signup', withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
@@ -56,7 +57,7 @@ router.get('/profile', withAuth, async (req, res) => {
 
     const user = userData.get({ plain: true });
 
-    res.render('profile', {
+    res.render('login', {
       ...user,
       logged_in: true
     });
@@ -68,7 +69,7 @@ router.get('/profile', withAuth, async (req, res) => {
 router.get('/login', (req, res) => {
 
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/');
     return;
   }
 
